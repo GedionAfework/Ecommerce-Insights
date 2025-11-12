@@ -14,16 +14,25 @@ import numpy as np
 import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+RAW_DIR = DATA_DIR / "raw"
 
 
 def get_data_path(filename: str) -> Path:
     """
     Return the absolute path to a file inside the data directory.
     """
-    path = DATA_DIR / filename
-    if not path.exists():
-        raise FileNotFoundError(f"Dataset not found: {path}")
-    return path
+    # Allow either direct placement under data/ or within data/raw/
+    candidates = [
+        DATA_DIR / filename,
+        RAW_DIR / filename,
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    raise FileNotFoundError(
+        "Dataset not found in expected locations. "
+        f"Tried: {', '.join(str(p) for p in candidates)}"
+    )
 
 
 def iter_json_chunks(

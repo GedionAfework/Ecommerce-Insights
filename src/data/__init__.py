@@ -9,6 +9,9 @@ from .loaders import (
     load_sample,
 )
 from .profile import DatasetProfile, profile_dataset
+from .clean_reviews import clean_reviews_dataset
+from .clean_metadata import clean_metadata_dataset
+from .fuse_datasets import fuse_reviews_metadata
 
 __all__ = [
     "DATA_DIR",
@@ -17,5 +20,8 @@ __all__ = [
     "load_sample",
     "DatasetProfile",
     "profile_dataset",
+    "clean_reviews_dataset",
+    "clean_metadata_dataset",
+    "fuse_reviews_metadata",
 ]
 
