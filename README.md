@@ -19,12 +19,12 @@ Ecommerce-Insights/
 
 ## Datasets
 
-| Dataset               | Filename               | Size (approx.) | Description |
-|-----------------------|------------------------|----------------|-------------|
-| Reviews - Books       | `Books_5.json`         | 22 GB          | 5-core Amazon book reviews with ratings, text, metadata. |
-| Reviews - Electronics | `Electronics_5.json`   | 4.2 GB         | 5-core Amazon electronics reviews. |
-| Metadata - Books      | `meta_Books.json`      | 4.0 GB         | Product metadata (pricing, categories, descriptions). |
-| Metadata - Electronics| `meta_Electronics.json`| 11 GB          | Electronics product metadata. |
+| Dataset               | Path                             | Size (approx.) | Description |
+|-----------------------|----------------------------------|----------------|-------------|
+| Reviews - Books       | `data/raw/Books_5.json`          | 22 GB          | 5-core Amazon book reviews with ratings, text, metadata. |
+| Reviews - Electronics | `data/raw/Electronics_5.json`    | 4.2 GB         | 5-core Amazon electronics reviews. |
+| Metadata - Books      | `data/raw/meta_Books.json`       | 4.0 GB         | Product metadata (pricing, categories, descriptions). |
+| Metadata - Electronics| `data/raw/meta_Electronics.json` | 11 GB          | Electronics product metadata. |
 
 All files originate from the UCSD Amazon Review Data (https://nijianmo.github.io/amazon/). Keep raw files compressed when archiving; only extract into `data/` for local processing.
 
