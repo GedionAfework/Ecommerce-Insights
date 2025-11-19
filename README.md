@@ -36,9 +36,9 @@ All files originate from the UCSD Amazon Review Data (https://nijianmo.github.io
    conda create -n ecommerce-insights python=3.10
    conda activate ecommerce-insights
    ```
-3. Install core packages (to be expanded as development continues):
+3. Install core packages:
    ```bash
-   pip install pandas numpy scikit-learn jupyterlab
+   pip install pandas numpy scikit-learn jupyterlab matplotlib seaborn scipy pyarrow rapidfuzz
    ```
 4. Optional: add GPU-enabled frameworks (PyTorch/TensorFlow) as modeling starts.
 
@@ -54,11 +54,44 @@ Dependencies will be formalized in `requirements.txt` once the core pipeline is 
 ## Project Roadmap
 
 - **Phase 0:** Repository scaffolding, environment, data intake notes. ✅
-- **Phase 1:** Data acquisition & management (chunked loaders, profiling, dataset documentation). ⏳
-- **Phase 2:** Data cleaning, feature engineering, fuzzy joins.
-- **Phase 3:** EDA with statistical testing and visualizations.
+- **Phase 1:** Data acquisition & management (chunked loaders, profiling, dataset documentation). ✅
+- **Phase 2:** Data cleaning, feature engineering, fuzzy joins. ✅
+- **Phase 3:** EDA with statistical testing and visualizations. ⏳ **CURRENT**
 - **Phase 4:** Sentiment modeling (baseline → ensemble/deep models) with hyperparameter tuning.
 - **Phase 5:** Advanced analytics (clustering, forecasting, causal inference).
 - **Phase 6:** Reporting (40+ page report, dashboard stub, exec slides) and packaging.
+
+## Running the Pipelines
+
+### Phase 2: Data Cleaning and Fusion
+
+1. **Clean Reviews Dataset:**
+   ```bash
+   python -m src.data.clean_reviews --dataset books
+   ```
+
+2. **Clean Metadata Dataset:**
+   ```bash
+   python -m src.data.clean_metadata --dataset books
+   ```
+
+3. **Fuse Datasets:**
+   ```bash
+   python -m src.data.fuse_datasets --reviews books --metadata books --fuzzy-threshold 92 --fuzzy-limit 20000
+   ```
+
+### Phase 3: Exploratory Data Analysis
+
+1. **Open Jupyter Notebook:**
+   ```bash
+   jupyter lab notebooks/01_eda_analysis.ipynb
+   ```
+
+2. **Run all cells** to generate:
+   - Statistical summaries
+   - Visualizations (saved to `reports/figures/`)
+   - Correlation analysis
+   - Temporal trends
+   - Statistical tests
 
 Checkpoints and deliverables will be tracked alongside the project plan.
