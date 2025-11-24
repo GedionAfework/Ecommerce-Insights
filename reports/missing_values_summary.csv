@@ -1,0 +1,13 @@
+Column,Missing Count,Missing Percentage
+total_votes,50000,100.0
+helpful_votes,50000,100.0
+date,50000,100.0
+helpfulness_ratio,50000,100.0
+helpfulness_cat,50000,100.0
+primary_category,50000,100.0
+details,50000,100.0
+vote,36819,73.638
+vote_count,36819,73.638
+price,4837,9.674000000000001
+brand_normalized,80,0.16
+reviewerName,4,0.008
