@@ -57,7 +57,7 @@ Dependencies will be formalized in `requirements.txt` once the core pipeline is 
 - **Phase 1:** Data acquisition & management (chunked loaders, profiling, dataset documentation). ✅
 - **Phase 2:** Data cleaning, feature engineering, fuzzy joins. ✅
 - **Phase 3:** EDA with statistical testing and visualizations. ✅ **COMPLETE**
-- **Phase 4:** Sentiment modeling (baseline → ensemble/deep models) with hyperparameter tuning. 🔜 **NEXT**
+- **Phase 4:** Sentiment modeling (baseline → ensemble/deep models) with hyperparameter tuning. ⏳ **IN PROGRESS**
 - **Phase 5:** Advanced analytics (clustering, forecasting, causal inference).
 - **Phase 6:** Reporting (40+ page report, dashboard stub, exec slides) and packaging.
 
