@@ -4,7 +4,7 @@ A Dash application for exploring e-commerce review data, sentiment analysis, and
 """
 
 import dash
-from dash import dcc, html, Input, Output, State, callback_context
+from dash import dcc, html, Input, Output, State
 import plotly.graph_objs as go
 import plotly.express as px
 import pandas as pd
@@ -418,5 +418,5 @@ def predict_sentiment(n_clicks, review_text):
         ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8050)
+    app.run(debug=True, port=8050)
 
