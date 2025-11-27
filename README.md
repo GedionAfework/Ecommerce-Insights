@@ -36,13 +36,11 @@ All files originate from the UCSD Amazon Review Data (https://nijianmo.github.io
    conda create -n ecommerce-insights python=3.10
    conda activate ecommerce-insights
    ```
-3. Install core packages:
+3. Install dependencies:
    ```bash
-   pip install pandas numpy scikit-learn jupyterlab matplotlib seaborn scipy pyarrow rapidfuzz
+   pip install -r requirements.txt
    ```
-4. Optional: add GPU-enabled frameworks (PyTorch/TensorFlow) as modeling starts.
-
-Dependencies will be formalized in `requirements.txt` once the core pipeline is established.
+4. Optional: add GPU-enabled frameworks (PyTorch/TensorFlow) for deep learning models.
 
 ## Getting Started
 
@@ -58,8 +56,8 @@ Dependencies will be formalized in `requirements.txt` once the core pipeline is 
 - **Phase 2:** Data cleaning, feature engineering, fuzzy joins. ✅
 - **Phase 3:** EDA with statistical testing and visualizations. ✅ **COMPLETE**
 - **Phase 4:** Sentiment modeling (baseline → ensemble/deep models) with hyperparameter tuning. ✅ **COMPLETE**
-- **Phase 5:** Advanced analytics (clustering, forecasting, causal inference).
-- **Phase 6:** Reporting (40+ page report, dashboard stub, exec slides) and packaging.
+- **Phase 5:** Advanced analytics (clustering, forecasting, causal inference). ✅ **COMPLETE**
+- **Phase 6:** Reporting (40+ page report, dashboard stub, exec slides) and packaging. ✅ **COMPLETE**
 
 ## Running the Pipelines
 
@@ -94,4 +92,78 @@ Dependencies will be formalized in `requirements.txt` once the core pipeline is 
    - Temporal trends
    - Statistical tests
 
-Checkpoints and deliverables will be tracked alongside the project plan.
+### Phase 4: Sentiment Modeling
+
+1. **Open Jupyter Notebook:**
+   ```bash
+   jupyter lab notebooks/02_sentiment_modeling.ipynb
+   ```
+
+2. **Run all cells** to:
+   - Train baseline and advanced models
+   - Perform hyperparameter tuning
+   - Evaluate model performance
+   - Save best model to `models/`
+
+### Phase 5: Advanced Analytics
+
+1. **Open Jupyter Notebook:**
+   ```bash
+   jupyter lab notebooks/03_advanced_analytics.ipynb
+   ```
+
+2. **Run all cells** to:
+   - Perform customer and product segmentation
+   - Generate time series forecasts
+   - Conduct causal inference analysis
+
+### Phase 6: Interactive Dashboard
+
+1. **Start the Dash Dashboard:**
+   ```bash
+   python dashboard/app.py
+   ```
+
+2. **Access the dashboard:**
+   - Open browser to `http://localhost:8050`
+   - Explore EDA visualizations
+   - View model performance metrics
+   - Make real-time sentiment predictions
+   - Analyze advanced analytics results
+
+## Project Deliverables
+
+### Reports
+- **Comprehensive Report:** `reports/comprehensive_report.md` (40+ pages)
+- **Executive Presentation:** `reports/executive_presentation.md`
+- **Phase-specific Reports:** Available in `reports/` directory
+
+### Models
+- **Best Sentiment Model:** `models/best_sentiment_model_logistic_regression_(tuned).pkl`
+- **TF-IDF Vectorizer:** `models/tfidf_vectorizer.pkl`
+- **Model Metadata:** `models/model_metadata.json`
+
+### Visualizations
+- All figures saved to `reports/figures/`
+- Includes EDA plots, model comparisons, clustering results, time series forecasts
+
+### Dashboard
+- Interactive Dash application in `dashboard/app.py`
+- Real-time sentiment prediction
+- Comprehensive data exploration
+
+## Key Results
+
+- **Model Accuracy:** 83.9% (3-class sentiment classification)
+- **Dataset Analyzed:** 26.9M reviews (sampled for analysis)
+- **Customer Clusters:** 4 distinct segments identified
+- **Time Series Model:** ARIMA(2,1,2) for review volume forecasting
+- **Key Insight:** 80% of reviews are positive, longer reviews are more helpful
+
+## Documentation
+
+- **Dashboard README:** `dashboard/README.md`
+- **Comprehensive Report:** `reports/comprehensive_report.md`
+- **Executive Presentation:** `reports/executive_presentation.md`
+
+Checkpoints and deliverables are tracked alongside the project plan.
